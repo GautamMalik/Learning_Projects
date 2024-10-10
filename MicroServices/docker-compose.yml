@@ -1,0 +1,113 @@
+version: '3'
+
+services:
+    db:
+      image :  mysql
+      command: --default-authentication-plugin=root
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_USERNAME=root
+      volumes:
+        - ./data:/var/lib/mysql
+      ports:
+        - 3306:3306
+      networks:
+        - bootapp
+
+    serviceregistory:
+      image: productdetails
+      build: ./serviceregistory
+      ports:
+       - "8761:8761"
+      networks:
+       - bootapp
+
+    productdetails:
+      image: productdetails
+      build: ./ProductDetails
+      ports:
+        - "9000:9000"
+      depends_on:
+        - db
+        - serviceregistory
+      networks:
+      - bootapp
+      environment:
+        - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+        - spring.datasource.url = jdbc:mysql://docker-mysql:3306/productdetails
+        - spring.datasource.username = root
+        - spring.datasource.password = root
+        - spring.jpa.show-sql = true
+        - spring.jpa.hibernate.ddl-auto = update
+        - spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+
+    product:
+      image: product
+      build: ./Product
+      ports:
+        - "9001:9001"
+      depends_on:
+        - db
+        - serviceregistory
+        - productdetails
+      networks:
+      - bootapp
+      environment:
+        - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+        - spring.datasource.url = jdbc:mysql://docker-mysql:3306/product
+        - spring.datasource.username = root
+        - spring.datasource.password = root
+        - spring.jpa.show-sql = true
+        - spring.jpa.hibernate.ddl-auto = update
+        - spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+
+    user:
+      image: user
+      build: ./User
+      ports:
+        - "9003:9003"
+      depends_on:
+        - db
+        - serviceregistory
+        - productdetails
+        - product
+      networks:
+      - bootapp
+      environment:
+        - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+        - spring.datasource.url = jdbc:mysql://docker-mysql:3306/user
+        - spring.datasource.username = root
+        - spring.datasource.password = root
+        - spring.jpa.show-sql = true
+        - spring.jpa.hibernate.ddl-auto = update
+        - spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+
+    admin:
+      image: admin
+      build: ./admin
+      ports:
+        - "9004:9004"
+      depends_on:
+        - serviceregistory
+        - productdetails
+        - product
+      networks:
+      - bootapp
+
+    apigateway:
+      image: apigateway
+      build: ./apiGateway
+      ports:
+        - "9595:9595"
+      depends_on:
+        - serviceregistory
+        - user
+        - admin
+        - product
+        - productdetails
+      networks:
+      - bootapp
+
+networks:
+  bootapp:
+    
