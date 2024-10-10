@@ -1,0 +1,23 @@
+.form-group{
+    margin: 10px;
+
+}
+
+.container-fluid{
+    background-color: #6c757d;
+    margin: auto;
+    padding: auto;
+}
+
+input.ng-invalid{
+    border-left: 4px  solid  red;
+}
+input.ng-valid{
+    border-left: 4px  solid  green;
+}
+
+
+a{
+    text-decoration: none;
+}
+

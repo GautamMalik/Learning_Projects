@@ -1,0 +1,22 @@
+input.ng-invalid{
+    border-left: 4px  solid  red;
+}
+
+input.ng-valid{
+    border-left: 4px  solid  green;
+}
+
+textarea.ng-invalid{
+    border-left: 4px  solid  red;
+}
+textarea.ng-valid{
+    border-left: 4px  solid  green;
+}
+
+.container-fluid{
+    min-height: 100%;
+}
+
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,51 @@
+<div class="container-fluid   bg-secondary">
+    <app-navbar (getSearchEvent)="getSearch($event)"></app-navbar>
+
+   
+        <div class="col-md-12 col-lg-12 col-xl-12" >
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center text-white">
+                      <a class="btn btn-outline-light"routerLink="/add" style="float: left; color: orange;">Add</a>
+
+                      <select class="btn btn-outline-light" style="float: left; margin-left: 15px; color:orange" (change)="selectDropdownHandeller($event)">
+                        <option hidden>Filter</option>
+                        <option value="title">Title</option>
+                        <option value="author">Author</option>
+                        <option value="date">Date</option>
+                      </select>
+
+                      <h3>My POSTS</h3>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="card" style="width: 100%; padding: auto; margin: 1px;" *ngFor="let i of posts | filter:searchKey:'author':'title':'date' | sort: dropdown">
+                        <div class="card-body">
+                          <h5 class="card-title">
+                            {{i.title}}
+                            <span *ngIf="i.solved==='true'">
+                              <img src="https://th.bing.com/th/id/OIP.3LLkhwuEM-gDA2sDFDy8QwHaHa?pid=ImgDet&rs=1" width="50px" height="50px">
+                            </span>
+                          </h5>
+                          <h6 class="card-subtitle mb-2 text-muted">{{i.author}}   {{i.date}}</h6>
+                          <p class="card-text">{{i.body}}</p>
+                          <a routerLink="/reply/{{i.id}}" class="card-link">Reply({{i.replies.length}})</a>
+                          <a routerLink="/view/{{i.id}}" class="card-link">View Post</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    
+
+    
+</div>
+
+
+

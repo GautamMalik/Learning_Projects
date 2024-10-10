@@ -1,0 +1,10 @@
+.container-fluid{
+    margin: auto;
+    padding: auto;
+    min-height: 100%;
+    
+}
+
+a{
+    text-decoration: none;
+}

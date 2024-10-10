@@ -1,0 +1,45 @@
+
+
+<div class="container-fluid h-100 bg-secondary">
+    <app-navbar></app-navbar>
+    <div class="row d-flex align-items-center justify-content-center">
+
+        <div class="right col-md-6 ">
+
+            <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+                <h2 class="text-white" style="margin: 50px;">Start a new topic</h2>
+                    
+                <div class="form-group ">
+                    <label class="text-white">Title</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" formControlName="title" placeholder="Title">
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <br>
+                    <label class="text-white">Body</label>
+                    <div class="input-group">
+                        <textarea class="form-control" formControlName="body" placeholder="Body" rows="7" cols="100"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group" style="float: right;">
+                    <br><a routerLink="/home" class="btn btn-danger">cancel</a> &nbsp;
+                    <button type="submit" [disabled]="Form" class="btn btn-primary" style="width: 100px;">post</button>
+                </div>
+            </form>
+        
+         </div>
+
+    </div>
+    
+</div>
+
+
+
+
+
+
+
