@@ -1,0 +1,23 @@
+Result Management System
+
+Overview
+The Result Management System is a web application designed to facilitate the management of student marks by teachers and provide a secure way for students to access their results. The system allows teachers to log in and manage student marks efficiently, while students can view their results using their roll number and date of birth.
+
+Features
+
+For Teachers
+
+Login: Secure login for teachers.
+Manage Marks: Add, update, and delete student marks.
+Student Information: View and manage student details including roll number.
+
+For Students
+
+View Results: Students can log in using their roll number and date of birth to view their marks.
+User-Friendly Interface: Simple and intuitive interface for easy navigation.
+
+Technology Stack
+
+Frontend: HTML, CSS, JavaScript, Angular
+Backend: Java, springboot
+Database: MySQL
