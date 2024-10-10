@@ -1,0 +1,50 @@
+<div class='container' style="max-height: 700px;">
+
+    <div class="heading col-12  mx-auto">
+        <span class="row row-col-sm-2 col-sm "> <span class="text-center m-4" style="font-size: 30px;">
+            Result Listing  
+            <span style="float: left;"><a class="btn btn-primary" style="width: 100px;" routerLink="/teacher/add">Add</a></span>
+            <span style="float: right;"><a class="btn btn-danger" style="width: 100px;" routerLink="/">Log out</a></span>
+            </span> 
+        </span>
+    </div>
+
+	<div class="content" style="min-height: 400px;">
+			
+        
+			<div class="right col-12  mx-auto" id="Right">
+				<!-- class RIGHT start -->
+				<div class="row row-col-sm-2 col-sm ">
+					<div class="table-responsive col-10 mx-auto">
+						<table class="table table-active table-striped table-bordered table-hover table-sm">
+							<thead>
+								<tr class="table-dark">
+									<th class="col-2" scope="col">Roll No.</th>
+									<th class="col-2" scope="col">Name</th>
+									<th class="col-2" scope="col">DOB</th>
+									<th class="col-3" scope="col">Score</th>
+									<th class="col-3" scope="col">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+                                <tr *ngFor="let i of list">
+                                    <td>{{i.rollNumber}}</td>
+                                    <td>{{i.name}}</td>
+                                    <td>{{i.dob}}</td>
+                                    <td>{{i.score}}</td>
+									<td>&nbsp;&nbsp;
+										<span><a class="btn btn-danger" style="width: 75px;" (click)="delete(i.rollNumber)">Delete</a></span>&nbsp;&nbsp;&nbsp;
+										<span ><a class="btn btn-primary" style="width: 75px;" routerLink="/teacher/update/{{i.rollNumber}}">Update</a></span>
+									</td>
+                                </tr>	
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+       
+	</div>
+</div>
+
+
+	

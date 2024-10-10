@@ -1,0 +1,99 @@
+<div class='container' >
+
+    <div class="heading col-12  mx-auto">
+        <span class="row row-col-sm-2 col-sm "> <span class="text-center m-4" style="font-size: 30px;">
+            Add Result  
+            </span> 
+        </span>
+    </div>
+
+    <div class="content" style="min-height: 400px;">
+        <div class="row  row-col-1 row-col-sm-2">
+
+            <div class="right col-3  mx-auto">
+                <!-- class Left start -->
+                <div class="row row-col-sm-2 col-sm "></div>
+            </div>
+            <!-- class Left end -->
+
+
+
+            <div class="left col-9 col-sm overflow-auto mx-auto">
+                <!-- class Right start -->
+                <div class="input_pt-3">
+                    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+                       
+                        <div class="form-group row p-2 ">
+                            <!-- Roll No -->
+                            <label  class="col-sm-2 col-form-label"><small>Roll No.
+                                    </small></label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" formControlName="rollNumber"
+                                    placeholder="Roll No.">
+                            </div>
+                        </div>
+                        <!-- Roll No -->
+
+                        <div class="form-group row p-2">
+                            <!-- Name -->
+                            <label  class="col-sm-2 col-form-label"><small>
+                                    Name</small></label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" formControlName="name"
+                                    placeholder="Name" >
+                            </div>
+                        </div>
+                        <!-- Name -->
+
+                        <div class="form-group row p-2">
+                            <!-- Score -->
+                            <label for="inputImage3" class="col-sm-2 col-form-label">
+                                <small>Score</small>
+                            </label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" formControlName="score"
+                                    placeholder="Score" >
+                            </div>
+                        </div>
+                        <!-- Score -->
+
+                        <!-- Date -->
+                        <div class="form-group row p-2">
+                            <label  class="col-sm-2 col-form-label"><small>
+                                DOB</small></label>
+                            <div class="col-sm-5">
+                                <input type="date" class="form-control" placeholder="Date" formControlName="dob"><br>
+                                
+                            </div>
+                        </div>
+                        <!-- Date -->
+                        
+
+
+                        <div class="form-group row p-2">
+                            <!-- Submit n clear -->
+                            <div class="col-sm-5">
+                                <button [disabled]="Form" type="submit" class="btn btn-primary"
+                                    style="width: 120px;">Submit</button>
+                                &nbsp;&nbsp; <a class="btn btn-danger" style="width: 80px;"
+                                    routerLink="/teacher/main">Cancel</a>
+                            </div>
+                        </div>
+                        <!-- Submit n clear -->
+                    </form>
+
+                </div>
+
+            </div>
+            <!-- class Right end -->
+
+
+
+        </div>
+        <!-- class ROW end -->
+    </div>
+    <!-- class content end -->
+
+</div>
+<!-- class container end -->
+

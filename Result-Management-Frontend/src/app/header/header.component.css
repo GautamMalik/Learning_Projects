@@ -1,0 +1,12 @@
+.header{
+    text-align: center; 
+    background-color: #007bff;
+    height: 50px;
+    padding: 4px; 
+    font-size: 25px;
+}
+
+.btn{
+    float: right;
+    color: #ffff;
+}
