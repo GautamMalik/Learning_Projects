@@ -1,0 +1,17 @@
+Overview
+This project is a web application that mimics the functionality of Stack Overflow, allowing users to post questions, reply with answers, and mark solutions. Users can view their posts, filter questions, and search through the content.
+
+Features
+
+User Registration and Authentication: Users can create accounts and log in.
+Post Questions: Users can submit questions on various topics.
+Answer Questions: Other users can reply to these questions with answers.
+Mark Solutions: The original poster can mark an answer as the solution, which will be indicated with a tick mark.
+Filter and Search: Users can filter questions and search for specific posts.
+View Own Posts: Users can see a list of their questions and answers.
+
+Technologies Used
+
+Frontend: HTML, CSS, JavaScript, Angular
+Backend: Java, SpringBoot
+Database: MySQL
